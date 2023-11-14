@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/aeliferr/Sources/rinha-backend/rinha-backend.csproj": {}
+    "/home/aeliferrari/Sources/rinha-backend/rinha-backend.csproj": {}
   },
   "projects": {
-    "/home/aeliferr/Sources/rinha-backend/rinha-backend.csproj": {
+    "/home/aeliferrari/Sources/rinha-backend/rinha-backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/aeliferr/Sources/rinha-backend/rinha-backend.csproj",
+        "projectUniqueName": "/home/aeliferrari/Sources/rinha-backend/rinha-backend.csproj",
         "projectName": "rinha-backend",
-        "projectPath": "/home/aeliferr/Sources/rinha-backend/rinha-backend.csproj",
-        "packagesPath": "/home/aeliferr/.nuget/packages/",
-        "outputPath": "/home/aeliferr/Sources/rinha-backend/obj/",
+        "projectPath": "/home/aeliferrari/Sources/rinha-backend/rinha-backend.csproj",
+        "packagesPath": "/home/aeliferrari/.nuget/packages/",
+        "outputPath": "/home/aeliferrari/Sources/rinha-backend/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/aeliferr/.nuget/NuGet/NuGet.Config"
+          "/home/aeliferrari/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -70,7 +70,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/home/aeliferr/.dotnet/sdk/7.0.400/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/7.0.111/RuntimeIdentifierGraph.json"
         }
       }
     }

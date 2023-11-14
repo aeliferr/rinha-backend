@@ -1,0 +1,105 @@
+RUN	RinhaBackendSimulation	rinhabackendsimulation	1699918187175	DESCRICAO	3.9.5
+USER	Criação E Talvez Consulta de Pessoas	START	1699918188436
+USER	Busca Válida de Pessoas	START	1699918188436
+USER	Busca Inválida de Pessoas	START	1699918188461
+REQUEST		busca inválida	1699918188457	1699918188462	KO	j.n.ConnectException: finishConnect(..) failed: Connection refused
+REQUEST		criação	1699918188457	1699918188462	KO	j.n.ConnectException: finishConnect(..) failed: Connection refused
+REQUEST		busca válida	1699918188457	1699918188462	KO	j.n.ConnectException: finishConnect(..) failed: Connection refused
+USER	Busca Válida de Pessoas	END	1699918188472
+USER	Busca Inválida de Pessoas	END	1699918188472
+USER	Criação E Talvez Consulta de Pessoas	END	1699918188473
+USER	Busca Válida de Pessoas	START	1699918188921
+USER	Busca Inválida de Pessoas	START	1699918188922
+REQUEST		busca válida	1699918188922	1699918188923	KO	j.n.ConnectException: finishConnect(..) failed: Connection refused
+REQUEST		busca inválida	1699918188921	1699918188923	KO	j.n.ConnectException: finishConnect(..) failed: Connection refused
+USER	Criação E Talvez Consulta de Pessoas	START	1699918188924
+USER	Busca Válida de Pessoas	END	1699918188924
+USER	Busca Inválida de Pessoas	END	1699918188924
+REQUEST		criação	1699918188925	1699918188926	KO	j.n.ConnectException: finishConnect(..) failed: Connection refused
+USER	Criação E Talvez Consulta de Pessoas	END	1699918188939
+USER	Busca Válida de Pessoas	START	1699918189421
+USER	Busca Inválida de Pessoas	START	1699918189422
+REQUEST		busca inválida	1699918189421	1699918189424	KO	j.n.ConnectException: finishConnect(..) failed: Connection refused
+USER	Busca Inválida de Pessoas	END	1699918189424
+REQUEST		busca válida	1699918189423	1699918189424	KO	j.n.ConnectException: finishConnect(..) failed: Connection refused
+USER	Criação E Talvez Consulta de Pessoas	START	1699918189425
+USER	Busca Válida de Pessoas	END	1699918189425
+REQUEST		criação	1699918189425	1699918189427	KO	j.n.ConnectException: finishConnect(..) failed: Connection refused
+USER	Criação E Talvez Consulta de Pessoas	END	1699918189446
+USER	Busca Válida de Pessoas	START	1699918189923
+USER	Busca Inválida de Pessoas	START	1699918189924
+REQUEST		busca inválida	1699918189923	1699918189925	KO	j.n.ConnectException: finishConnect(..) failed: Connection refused
+USER	Busca Inválida de Pessoas	END	1699918189925
+REQUEST		busca válida	1699918189923	1699918189925	KO	j.n.ConnectException: finishConnect(..) failed: Connection refused
+USER	Busca Válida de Pessoas	END	1699918189925
+USER	Criação E Talvez Consulta de Pessoas	START	1699918189925
+REQUEST		criação	1699918189926	1699918189928	KO	j.n.ConnectException: finishConnect(..) failed: Connection refused
+USER	Criação E Talvez Consulta de Pessoas	END	1699918189929
+USER	Busca Válida de Pessoas	START	1699918190422
+USER	Busca Inválida de Pessoas	START	1699918190424
+REQUEST		busca inválida	1699918190423	1699918190425	KO	j.n.ConnectException: finishConnect(..) failed: Connection refused
+REQUEST		busca válida	1699918190423	1699918190425	KO	j.n.ConnectException: finishConnect(..) failed: Connection refused
+USER	Busca Inválida de Pessoas	END	1699918190425
+USER	Busca Válida de Pessoas	END	1699918190425
+USER	Criação E Talvez Consulta de Pessoas	START	1699918190426
+REQUEST		criação	1699918190426	1699918190427	KO	j.n.ConnectException: finishConnect(..) failed: Connection refused
+USER	Criação E Talvez Consulta de Pessoas	END	1699918190445
+USER	Criação E Talvez Consulta de Pessoas	START	1699918190922
+USER	Busca Válida de Pessoas	START	1699918190922
+USER	Busca Inválida de Pessoas	START	1699918190923
+REQUEST		busca válida	1699918190923	1699918190924	KO	j.n.ConnectException: finishConnect(..) failed: Connection refused
+REQUEST		criação	1699918190923	1699918190924	KO	j.n.ConnectException: finishConnect(..) failed: Connection refused
+USER	Busca Válida de Pessoas	END	1699918190924
+REQUEST		busca inválida	1699918190922	1699918190925	KO	j.n.ConnectException: finishConnect(..) failed: Connection refused
+USER	Busca Inválida de Pessoas	END	1699918190925
+USER	Criação E Talvez Consulta de Pessoas	END	1699918190941
+USER	Busca Válida de Pessoas	START	1699918191422
+USER	Criação E Talvez Consulta de Pessoas	START	1699918191422
+USER	Busca Inválida de Pessoas	START	1699918191423
+REQUEST		busca inválida	1699918191422	1699918191424	KO	j.n.ConnectException: finishConnect(..) failed: Connection refused
+REQUEST		busca válida	1699918191423	1699918191424	KO	j.n.ConnectException: finishConnect(..) failed: Connection refused
+USER	Busca Válida de Pessoas	END	1699918191424
+USER	Busca Inválida de Pessoas	END	1699918191424
+REQUEST		criação	1699918191423	1699918191425	KO	j.n.ConnectException: finishConnect(..) failed: Connection refused
+USER	Criação E Talvez Consulta de Pessoas	END	1699918191452
+USER	Busca Válida de Pessoas	START	1699918191922
+USER	Criação E Talvez Consulta de Pessoas	START	1699918191922
+USER	Busca Inválida de Pessoas	START	1699918191924
+REQUEST		criação	1699918191923	1699918191924	KO	j.n.ConnectException: finishConnect(..) failed: Connection refused
+REQUEST		busca válida	1699918191923	1699918191924	KO	j.n.ConnectException: finishConnect(..) failed: Connection refused
+USER	Busca Válida de Pessoas	END	1699918191925
+REQUEST		busca inválida	1699918191923	1699918191925	KO	j.n.ConnectException: finishConnect(..) failed: Connection refused
+USER	Busca Inválida de Pessoas	END	1699918191925
+USER	Criação E Talvez Consulta de Pessoas	END	1699918191930
+USER	Busca Válida de Pessoas	START	1699918192422
+USER	Busca Inválida de Pessoas	START	1699918192423
+REQUEST		busca inválida	1699918192423	1699918192424	KO	j.n.ConnectException: finishConnect(..) failed: Connection refused
+USER	Busca Inválida de Pessoas	END	1699918192424
+REQUEST		busca válida	1699918192423	1699918192425	KO	j.n.ConnectException: finishConnect(..) failed: Connection refused
+USER	Busca Válida de Pessoas	END	1699918192425
+USER	Criação E Talvez Consulta de Pessoas	START	1699918192425
+REQUEST		criação	1699918192426	1699918192427	KO	j.n.ConnectException: finishConnect(..) failed: Connection refused
+USER	Criação E Talvez Consulta de Pessoas	END	1699918192453
+USER	Criação E Talvez Consulta de Pessoas	START	1699918192922
+USER	Busca Válida de Pessoas	START	1699918192922
+USER	Busca Inválida de Pessoas	START	1699918192923
+REQUEST		criação	1699918192923	1699918192924	KO	j.n.ConnectException: finishConnect(..) failed: Connection refused
+REQUEST		busca inválida	1699918192922	1699918192923	KO	j.n.ConnectException: finishConnect(..) failed: Connection refused
+USER	Busca Inválida de Pessoas	END	1699918192924
+REQUEST		busca válida	1699918192923	1699918192924	KO	j.n.ConnectException: finishConnect(..) failed: Connection refused
+USER	Busca Válida de Pessoas	END	1699918192925
+USER	Criação E Talvez Consulta de Pessoas	END	1699918192948
+USER	Criação E Talvez Consulta de Pessoas	START	1699918193422
+USER	Busca Válida de Pessoas	START	1699918193422
+USER	Busca Inválida de Pessoas	START	1699918193423
+REQUEST		busca inválida	1699918193422	1699918193424	KO	j.n.ConnectException: finishConnect(..) failed: Connection refused
+REQUEST		busca válida	1699918193423	1699918193424	KO	j.n.ConnectException: finishConnect(..) failed: Connection refused
+REQUEST		criação	1699918193423	1699918193424	KO	j.n.ConnectException: finishConnect(..) failed: Connection refused
+USER	Busca Inválida de Pessoas	END	1699918193424
+USER	Busca Válida de Pessoas	END	1699918193424
+USER	Criação E Talvez Consulta de Pessoas	END	1699918193435
+USER	Busca Válida de Pessoas	START	1699918193922
+USER	Criação E Talvez Consulta de Pessoas	START	1699918193922
+USER	Busca Inválida de Pessoas	START	1699918193923
+REQUEST		criação	1699918193923	1699918193924	KO	j.n.ConnectException: finishConnect(..) failed: Connection refused
+REQUEST		busca inválida	1699918193922	1699918193924	KO	

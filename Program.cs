@@ -1,14 +1,28 @@
+using System.Collections.Concurrent;
 using Npgsql;
 using rinha_backend;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+var db_host = builder.Configuration.GetValue<string>("DB_HOST");
+var db_user = builder.Configuration.GetValue<string>("DB_USER");
+var db_password = builder.Configuration.GetValue<string>("DB_PASSWORD");
+var db_name = builder.Configuration.GetValue<string>("DB_NAME");
+
+var connectionString = $"Host={db_host}:5432;Username={db_user};Password={db_password};Database={db_name};Pooling=true;Minimum Pool Size=20;Maximum Pool Size=200;Timeout=60";
+
+
+builder.Services.AddSingleton(_ => new ConcurrentQueue<Person>());
+builder.Services.AddSingleton(_ => new ConcurrentQueue<string>());
+builder.Services.AddSingleton(_ => NpgsqlDataSource.Create(connectionString));
+
+builder.Services.AddHostedService<InsertPerson>();
 
 var app = builder.Build();
 
@@ -18,15 +32,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
-var db_host = builder.Configuration.GetValue<string>("DB_HOST");
-var db_user = builder.Configuration.GetValue<string>("DB_USER");
-var db_password = builder.Configuration.GetValue<string>("DB_PASSWORD");
-var db_name = builder.Configuration.GetValue<string>("DB_NAME");
-
-var connectionString = $"Host={db_host}:5432;Username={db_user};Password={db_password};Database={db_name};Pooling=true;Minimum Pool Size=50;Maximum Pool Size=200";
-
-await using var dataSource = NpgsqlDataSource.Create(connectionString);
 
 app.UseHttpsRedirection();
 
@@ -64,7 +69,7 @@ static string PersonValidator(Person person) {
     return string.Empty;
 }
 
-app.MapPost("/pessoas", async (Person person) => {
+app.MapPost("/pessoas", async (ConcurrentQueue<Person> concurrentQueue, NpgsqlDataSource dataSource, Person person) => {
     var err = PersonValidator(person);
 
     if (!string.IsNullOrEmpty(err))
@@ -79,25 +84,16 @@ app.MapPost("/pessoas", async (Person person) => {
             if (reader.HasRows)
                 return Results.UnprocessableEntity("Já existe uma pessoa cadastrada com este apelido");
         };
-
-        cmd.Parameters.Clear();
     
         person.Id = Guid.NewGuid();
+    }       
 
-        cmd.CommandText = "INSERT INTO people (id, nickname, name, birth_date, stack) VALUES ($1, $2, $3, $4, $5)";
-        cmd.Parameters.AddWithValue(person.Id);
-        cmd.Parameters.AddWithValue(person.Apelido);
-        cmd.Parameters.AddWithValue(person.Nome);
-        cmd.Parameters.AddWithValue(person.Nascimento);
-        cmd.Parameters.AddWithValue((object)person.Stack ?? DBNull.Value);
-
-        await cmd.ExecuteNonQueryAsync();
-    }        
+    concurrentQueue.Enqueue(person); 
 
     return Results.Created($"/pessoas/{person.Id}", person);
 });
 
-app.MapGet("/pessoas/{id}", async (Guid id) => {
+app.MapGet("/pessoas/{id}", async (NpgsqlDataSource dataSource, Guid id) => {
     Person person = null;
 
     await using (var connection = await dataSource.OpenConnectionAsync())
@@ -122,7 +118,7 @@ app.MapGet("/pessoas/{id}", async (Guid id) => {
     return Results.Ok(person);
 });
 
-app.MapGet("/pessoas", async (string t) => {
+app.MapGet("/pessoas", async (NpgsqlDataSource dataSource, string t) => {
     if (string.IsNullOrEmpty(t))
         return Results.BadRequest("Termo de consulta não foi informado");
 
@@ -155,7 +151,7 @@ app.MapGet("/pessoas", async (string t) => {
     return Results.Ok(people);
 });
 
-app.MapGet("/contagem-pessoas", async () => {
+app.MapGet("/contagem-pessoas", async (NpgsqlDataSource dataSource) => {
     
     int amount;
     await using (var cmd = dataSource.CreateCommand("SELECT COUNT(id) FROM people"))
